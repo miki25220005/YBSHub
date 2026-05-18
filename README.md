@@ -46,5 +46,19 @@ To run this project locally (e.g., using Laragon, XAMPP, or WAMP):
    - Update the `$host`, `$user`, `$password`, and `$database` variables in `database.php` to match your local database credentials.
 4. **Launch:** Open your browser and navigate to `http://localhost/YBSHub/Version 1.10/` (or your appropriate local path).
 
+## 🔄 Version History
+
+### [Version 1.10] - Current Release
+- **Ad Integrations:** Enhanced global ad support with targeted pop-ups and banner advertisements.
+- **Improved Routing Algorithm:** Smarter, faster multi-step route calculations in the destination finder to avoid duplicate results.
+- **UI & UX Enhancements:** Localized (Myanmar) transit steppers, fixed CSS alignments, and upgraded mobile bottom-sheet popups.
+- **Security Updates:** Stricter separation of admin components and fully hidden database configurations.
+
+### [Version 1.00] - Beta Release (Oct 2024)
+- **Core Architecture:** Restructured codebase into clean structure (`/assets`, `/config`, `/core`, `/includes`).
+- **Interactive Maps:** Integrated Leaflet.js maps for bus stops and dynamic route tracking.
+- **Admin Dashboard:** Modernized glassmorphism admin panel with dynamic bus stop ordering.
+- **Custom Assets:** Added custom SVG markers and gate iconography.
+
 ## 📜 License
 This project is open-source. Feel free to explore, contribute, or use it as inspiration!
