@@ -40,7 +40,8 @@ To run this project locally (e.g., using Laragon, XAMPP, or WAMP):
    ```
 2. **Move to Web Root:** Place the project folder into your local web server's root directory (e.g., `www/YBSHub` or `htdocs/YBSHub`).
 3. **Database Setup:**
-   - Import the YBS database SQL file into your MySQL/MariaDB server.
+   - *Note: The actual YBS database schema and data are proprietary and not included in this public repository.*
+   - You will need to create your own database structure to run this application locally.
    - Rename `Version 1.10/config/database.example.php` to `database.php`.
    - Update the `$host`, `$user`, `$password`, and `$database` variables in `database.php` to match your local database credentials.
 4. **Launch:** Open your browser and navigate to `http://localhost/YBSHub/Version 1.10/` (or your appropriate local path).
