@@ -1,0 +1,23 @@
+# === SENSITIVE FILES ===
+*/config/database.php
+*service_account.json
+*/Admin/backups/
+
+# === DATABASE DUMPS ===
+# Ignore all dated SQL backups to save space
+*/Database/*.sql
+# But keep a clean schema file if you create one later
+!*/Database/schema.sql
+
+# === ADMIN UPLOADS ===
+*/Admin/AdminPhoto/
+
+# === TEST/TEMP FILES ===
+*test_syntax*.js
+*Test_noti.html
+
+# === OS & EDITOR FILES ===
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

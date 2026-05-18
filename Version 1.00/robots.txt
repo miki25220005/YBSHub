@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Prevent indexing of sensitive and backend directories
+Disallow: /Admin/
+Disallow: /config/
+Disallow: /core/
+Disallow: /includes/
+
+# Point search engines to the sitemap
+Sitemap: https://your-ybs-domain.com/sitemap.xml

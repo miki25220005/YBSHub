@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # RewriteBase /YBSRoute/ 
+    # (မှတ်ချက်: Localhost တွင် Folder အောက်ရှိလျှင် /YBSRoute/ ဟု ထည့်ပေးရတတ်သည်၊ သို့သော် Hosting တွင် error တက်စေနိုင်သဖြင့် comment ပိတ်ထားပါသည်။ အကယ်၍ localhost တွင် အဆင်မပြေပါက ပြန်ဖွင့်ပေးပါ။ Hosting တွင်မူ / ဟု ပြောင်းပေးရပါမည် သို့မဟုတ် comment ပိတ်ထားရပါမည်။)
+
+    # Prevent rewrite loops
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+
+    # -----------------------------------------------------------
+    # FIX: chat_handler.php ကို Redirect မလုပ်အောင် တားဆီးခြင်း
+    # (ဒီအကြောင်းအရာကြောင့် POST Data ပျောက်နေရခြင်းဖြစ်သည်)
+    # -----------------------------------------------------------
+    RewriteCond %{REQUEST_URI} !/chat_handler\.php$ [NC]
+
+    # Redirect external .php requests to extensionless URL
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+    RewriteRule ^ %1 [R=301,L]
+
+    # Internally rewrite extensionless URL to .php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.+)$ $1.php [L]
+
+    # Route non-existent paths to index.php
+    # (chat_handler.php မဟုတ်မှသာ index.php သို့သွားမည်)
+    RewriteCond %{REQUEST_URI} !/chat_handler\.php$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . index.php [L]
+</IfModule>
